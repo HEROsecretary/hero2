@@ -9,13 +9,47 @@
     <style>
         /* Custom Styles */
         body {
-            color: #ffffff; /* Default text color to white */
-            background-color: #333; /* Background color for body */
+            color: #000000; /* Default text color to black for better readability on white background */
+            background-color: #ffffff; /* Background color for body */
+        }
+
+        header {
+            background-color: #f8f8f8; /* Background color for header */
+            padding: 10px 0; /* Padding around the header content */
+            border-bottom: 1px solid #ddd; /* Bottom border for the header */
+        }
+
+        header h1 {
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            font-size: 1.8em; /* Adjust the font size of the title */
         }
 
         header h1 a {
-            color: #ffffff; /* Title font color to white */
+            color: #333; /* Title font color */
             text-decoration: none; /* Remove underline from the link */
+        }
+
+        nav#nav {
+            text-align: center;
+        }
+
+        nav#nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav#nav ul li {
+            display: inline;
+            margin-right: 10px;
+        }
+
+        nav#nav ul li a {
+            color: #333; /* Menu item font color */
+            text-decoration: none; /* Remove underline from the links */
+            padding: 5px 10px;
         }
 
         .carousel-inner .item img {
@@ -32,13 +66,26 @@
         }
 
         .wrapper.style5 {
-            background-color: #444; /* Background color of the box */
+            background-color: #f4f4f4; /* Light gray background color for the wrapper */
             padding: 20px;
             border-radius: 10px;
         }
 
         .inner {
             text-align: center;
+        }
+
+        .carousel-control {
+            background-image: none; /* Remove default background image for controls */
+            color: #333; /* Control arrow color */
+        }
+
+        .carousel-control.left {
+            left: 10px;
+        }
+
+        .carousel-control.right {
+            right: 10px;
         }
     </style>
 </head>
