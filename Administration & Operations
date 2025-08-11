@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Oversight | HERO</title>
+  <link rel="stylesheet" href="assets/css/main.css" />
+</head>
+<body>
+
+  <!-- Header -->
+  <header id="header">
+    <h1><a href="index.html">HERO</a></h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="oversight.html" class="active">Oversight</a></li>
+        <!-- Add other links here -->
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Oversight Section -->
+  <section id="three" class="wrapper style1 special">
+    <div class="inner">
+      <header class="major">
+        <h2>Oversight</h2>
+      </header>
+
+      <h3>HERO Administrator</h3>
+      <span class="image middle">
+        <img src="images/Dr. Kessler.jpg" width="294" height="368" alt="Dr. Roanna Kessler" />
+      </span>
+      <p>Roanna Kessler, M.D.</p>
+
+      <h3>Medical Director</h3>
+      <span class="image middle">
+        <img src="images/Dr. Asa Margolis.jpg" width="294" height="368" alt="Dr. Asa Margolis" />
+      </span>
+      <p>Asa Margolis, D.O., M.P.H.</p>
+
+      <h3>Financial Analyst</h3>
+      <span class="image middle">
+        <img src="images/Gillian Furlong.jpg" width="294" height="368" alt="Gillian Furlong" />
+      </span>
+      <p>Gillian Furlong</p>
+
+      <h3>Operational Oversight</h3>
+      <p>Lee James, Executive Director of Campus Safety &amp; Security</p>
+
+      <h3>HERO Security Liaison</h3>
+      <p>Sgt. Steve Gaubatz</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="footer">
+    <p>&copy; HERO. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
