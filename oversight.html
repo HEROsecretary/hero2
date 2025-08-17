@@ -38,36 +38,60 @@
   </header>
 
 <!-- Main -->
- <article id="main">
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Oversight</title>
+  <style>
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      text-align: center;
+    }
+    .team-member img {
+      max-width: 294px;
+      height: auto;
+      border-radius: 8px;
+      display: block;
+      margin: 0 auto;
+    }
+    @media (max-width: 700px) {
+      .team-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Main -->
+<article id="main">
   <header>
     <h2>Oversight</h2>
     <p>Meet our administrative and operational oversight team</p>
   </header>
+
   <section class="wrapper style5">
     <div class="inner">
       <div class="team-grid">
 
         <div class="team-member">
           <h3>HERO Administrator</h3>
-          <span class="image">
-            <img src="images/Dr. Kessler.jpg" alt="Dr. Roanna Kessler" />
-          </span>
+          <img src="images/Dr. Kessler.jpg" alt="Dr. Roanna Kessler">
           <p>Roanna Kessler, M.D.</p>
         </div>
 
         <div class="team-member">
           <h3>Medical Director</h3>
-          <span class="image">
-            <img src="images/Dr. Asa Margolis.jpg" alt="Dr. Asa Margolis" />
-          </span>
+          <img src="images/Dr. Asa Margolis.jpg" alt="Dr. Asa Margolis">
           <p>Asa Margolis, D.O., M.P.H.</p>
         </div>
 
         <div class="team-member">
           <h3>Financial Analyst</h3>
-          <span class="image">
-            <img src="images/Gillian Furlong.jpg" alt="Gillian Furlong" />
-          </span>
+          <img src="images/Gillian Furlong.jpg" alt="Gillian Furlong">
           <p>Gillian Furlong</p>
         </div>
 
@@ -90,6 +114,9 @@
     </div>
   </section>
 </article>
+
+</body>
+</html>
 
   <!-- Footer -->
   <footer id="footer">
