@@ -38,7 +38,7 @@
   </header>
 
 <!-- Main -->
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -48,14 +48,22 @@
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 2rem;
+      justify-items: center;   /* centers items horizontally */
+      align-items: center;     /* centers items vertically */
       text-align: center;
     }
+    .team-member {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
     .team-member img {
-      max-width: 294px;
-      height: auto;
+      width: 294px;
+      height: 368px;
       border-radius: 8px;
       display: block;
-      margin: 0 auto;
+      margin-bottom: 0.5rem;
     }
     @media (max-width: 700px) {
       .team-grid {
@@ -67,7 +75,7 @@
 <body>
 
 <!-- Main -->
-<article id="main">
+<article id="main" style="text-align:center;">
   <header>
     <h2>Oversight</h2>
     <p>Meet our administrative and operational oversight team</p>
@@ -79,35 +87,39 @@
 
         <div class="team-member">
           <h3>HERO Administrator</h3>
-          <img src="images/Dr. Kessler.jpg" alt="Dr. Roanna Kessler">
+          <img src="images/Dr. Kessler.jpg" width="294" height="368" alt="Dr. Roanna Kessler">
           <p>Roanna Kessler, M.D.</p>
         </div>
 
         <div class="team-member">
           <h3>Medical Director</h3>
-          <img src="images/Dr. Asa Margolis.jpg" alt="Dr. Asa Margolis">
+          <img src="images/Dr. Asa Margolis.jpg" width="294" height="368" alt="Dr. Asa Margolis">
           <p>Asa Margolis, D.O., M.P.H.</p>
         </div>
 
         <div class="team-member">
           <h3>Financial Analyst</h3>
-          <img src="images/Gillian Furlong.jpg" alt="Gillian Furlong">
+          <img src="images/Gillian Furlong.jpg" width="294" height="368" alt="Gillian Furlong">
           <p>Gillian Furlong</p>
         </div>
 
         <div class="team-member">
           <h3>Operational Oversight</h3>
-          <p>Jargon Jackson, Executive Director of Campus Safety &amp; Security</p>
+          <p>Jargon Jackson<br>Executive Director of Campus Safety &amp; Security</p>
         </div>
 
         <div class="team-member">
           <h3>HERO Security Liaison</h3>
-          <p></p>
+          <p><!-- Add name here --></p>
         </div>
 
         <div class="team-member">
           <h3>Lifeline Team</h3>
-          <p>Heidei Hubble, John Oliveria, Brian Fletcher</p>
+          <p>
+            Heidei Hubble<br>
+            John Oliveria<br>
+            Brian Fletcher
+          </p>
         </div>
 
       </div>
@@ -117,6 +129,7 @@
 
 </body>
 </html>
+
 
   <!-- Footer -->
   <footer id="footer">
