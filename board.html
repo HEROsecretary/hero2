@@ -1,370 +1,319 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
+  <title>Board of Directors</title>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Board of Directors</title>
   <link rel="stylesheet" href="assets/css/main.css" />
-  <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-  <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-        integrity="sha512-xh6Zc7rSgBuXpgc3pt9dlmQ2nV8iUPzZ7Myanq7xFyewcU6v9CMRyIoxDn4WJ4G1SskLw4q2IrvP1JgN+qYlgA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <style>
-    body { background-color:#f9f9f9; margin:0; font-family: Arial, sans-serif; padding-top: 80px; }
-    
-    /* Header */
-    #header {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: #fff;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0.7em 1.5em;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      z-index: 1000;
-      flex-wrap: wrap;
-    }
-    #header h1 {
-      margin: 0;
-      font-size: 1em;
-      flex: 1 1 100%;
-      text-align: center;
-      word-break: break-word;
-    }
-    #header h1 a {
-      color: #000;
-      text-decoration: none;
-      font-weight: 600;
-    }
-    #nav ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      gap: 1em;
-      justify-content: center;
-      flex-wrap: wrap;
-      width: 100%;
-    }
-    #nav ul li a {
-      color: #000;
-      text-decoration: none;
-      font-weight: 500;
-      padding: 0.4em 0.6em;
-      display: block;
-    }
-    
-    /* Member boxes */
-    .member-box {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: flex-start;
-      margin-bottom: 2em;
-      padding: 1em;
-      background-color: #fff;
-      border-radius: 10px;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
-    }
-    .member-box img {
-      width: 200px;
-      height: auto;
-      border-radius: 8px;
-      margin-right: 1.5em;
-      margin-bottom: 1em;
-    }
-    .member-info {
-      flex: 1;
-      min-width: 220px;
-    }
-    .member-info h3 {
-      margin-top: 0;
-      margin-bottom: 0.5em;
-      color: #000;
-    }
-    .member-info p {
-      margin: 0.5em 0 0 0;
-      line-height: 1.5;
-      color: #000;
-    }
-
-    /* Coordinators and officers */
-    .officers-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 2em;
-    }
-    .officers-container .officer {
-      text-align: center;
-      max-width: 200px;
-    }
-    .officers-container .officer img {
-      width: 100%;
-      border-radius: 10px;
-    }
-
-    /* Headers */
-    header.major {
-      margin-top: 2em;
-      margin-bottom: 1em;
-      text-align: center;
-      color: #000;
-    }
-
-    /* Responsive nav for small screens */
-    @media (max-width: 850px) {
-      #nav ul {
-        flex-direction: column;
-        display: none;
-        background: #fff;
-        padding: 1em;
-        border-radius: 10px;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-        position: absolute;
-        top: 70px;
-        left: 50%;
-        transform: translateX(-50%);
-        text-align: center;
-      }
-      #nav ul.show {
-        display: flex;
-      }
-    }
-
-    /* Menu toggle button */
-    #menu-toggle {
-      display: none;
-      background: none;
-      border: none;
-      font-size: 1.5em;
-      cursor: pointer;
-      color: #000;
-    }
-    @media (max-width: 850px) {
-      #menu-toggle {
-        display: block;
-      }
-    }
-  </style>
+  <noscript>
+    <link rel="stylesheet" href="assets/css/noscript.css" />
+  </noscript>
 </head>
+
 <body>
+  <!-- Page Wrapper -->
+  <div id="page-wrapper">
 
-<div id="page-wrapper">
-
-  <!-- Header -->
-  <header id="header">
-    <h1><a href="index.html">Hopkins Emergency Response Organization</a></h1>
-    <button id="menu-toggle"><i class="fas fa-bars"></i></button>
-    <nav id="nav">
-      <ul id="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="board.html">Leadership Team</a></li>
-        <li><a href="oversight.html">Oversight</a></li>
-        <li><a href="members.html">Members</a></li>
-        <li><a href="recruitment.html">Recruitment</a></li>
-        <li><a href="resources.html">Resources</a></li>
-        <li><a href="accolades.html">Accolades</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="updates.html">Updates</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <script>
-    const toggle = document.getElementById('menu-toggle');
-    const navLinks = document.getElementById('nav-links');
-
-    toggle.addEventListener('click', () => {
-      navLinks.classList.toggle('show');
-      toggle.innerHTML = navLinks.classList.contains('show') 
-        ? "<i class='fas fa-times'></i>" 
-        : "<i class='fas fa-bars'></i>";
-    });
-
-    window.addEventListener('resize', () => {
-      if(window.innerWidth > 850){
-        navLinks.classList.remove('show');
-        toggle.innerHTML = "<i class='fas fa-bars'></i>";
-      }
-    });
-  </script>
-
-  <!-- Main -->
-  <article id="main">
-    <header class="major">
-      <h2>Leadership Team</h2>
-      <p>Meet the administrative and operational heart of HERO</p>
+    <!-- Header -->
+    <header id="header">
+      <h1>
+        <a href="index.html">Hopkins Emergency Response Organization</a>
+      </h1>
+      <nav id="nav">
+        <ul>
+          <li class="special">
+            <a href="#menu" class="menuToggle"><span>Menu</span></a>
+            <div id="menu">
+              <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="board.html">Leadership Team</a></li>
+                <li><a href="oversight.html">Oversight</a></li>
+                <li><a href="members.html">Members</a></li>
+                <li><a href="recruitment.html">Recruitment Information</a></li>
+                <li><a href="resources.html">Member Resources</a></li>
+                <li><a href="accolades.html">Accolades</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="updates.html">Member Updates</a></li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </nav>
     </header>
 
-    <!-- Board Members -->
-    <section>
-      <!-- Betania Arce -->
-      <div class="member-box">
-        <img src="Members/2024Betania.jpeg" alt="Betania Arce"/>
-        <div class="member-info">
-          <h3>Captain: Betania Arce <a href="mailto:hero_captain@jhu.edu" class="icon fa-envelope">Email</a></h3>
-          <p>Betania Arce is honored to be serving as the Captain for 2025. Betania is from Miami, Florida and is majoring in Biomedical Engineering (co 2026). She joined HERO as a prior EMT her freshman spring. As Captain, Betania helps oversee the operations of HERO. She has previously served as President and Secretary of HERO. Outside of HERO, Betania does research at Bayview and enjoys a caffeinated beverage.</p>
-        </div>
-      </div>
+    <!-- Main -->
+    <article id="main">
 
-      <!-- Erika Flickinger -->
-      <div class="member-box">
-        <img src="Members/2024Erika.jpeg" alt="Erika Flickinger"/>
-        <div class="member-info">
-          <h3>President: Erika Flickinger <a href="mailto:hero_personnel@jhu.edu" class="icon fa-envelope">Email</a></h3>
-          <p>Erika is from Decatur, Illinois and is majoring in Computer Science & Cognitive Science (co 2026). She joined HERO as a non-prior EMT her sophomore spring. As President, Erika helps lead BOD and connects with HERO admin. Outside of HERO, Erika enjoys yoga, spending time with friends, and exploring coffee shops.</p>
+      <!-- Overview -->
+      <section id="two" class="wrapper style2 special">
+        <div class="inner">
+          <header class="major">
+            <h2>Overview</h2>
+            <p>
+              HERO has two branches: an administrative branch overseen by the Board of Directors and an operational branch overseen by the Operations Board. Together, the boards work to maintain the integrity of HERO's policy decisions, mission, and vision.
+            </p>
+          </header>
         </div>
-      </div>
+      </section>
 
-      <!-- Clayton Tomilinson -->
-      <div class="member-box">
-        <img src="Members/2024Clay.jpg" alt="Clayton Tomilinson"/>
-        <div class="member-info">
-          <h3>Personnel Lieutenant: Clayton Tomilinson <a href="mailto:hero_captain@jhu.edu" class="icon fa-envelope">Email</a></h3>
-          <p>Clay is from Hunterdon county, New Jersey and is majoring in Molecular and Cellular Biology (JHU ‘27). He joined HERO as a prior EMT in his freshman year. As Personnel Lieutenant, Clay manages HERO logistics, schedules unit shifts, and helps coordinate standby events. He has previously served as a selection officer. Outside of HERO, Clay is a climbing instructor in Outdoor Pursuits and a camp counselor for Camp Kesem. In his free time, he enjoys reading, climbing, and volunteering with White Marsh Volunteer Fire Department.</p>
-        </div>
-      </div>
+      <!-- Board Members -->
+      <section class="wrapper style5">
+        <div class="inner" align="center">
+          <article id="board">
+            <header class="major">
+              <h2>Meet the Board</h2>
+            </header>
 
-      <!-- Grant Dahl -->
-      <div class="member-box">
-        <img src="Members/2024Grant.jpg" alt="Grant Dahl"/>
-        <div class="member-info">
-          <h3>EMS Lieutenant: Grant Dahl <a href="mailto:hero_captain@jhu.edu" class="icon fa-envelope">Email</a></h3>
-          <p>Grant is from St. Louis, Missouri and is majoring in Neuroscience (co 2027). He joined HERO as a non-prior EMT in his freshman spring. As EMS Lieutenant, he oversees promotions within the unit and also assists with onboarding probationary members. Outside of HERO, Grant enjoys whitewater kayaking, singing in his a cappella group, and playing sports.</p>
-        </div>
-      </div>
+            <!-- Board Member Template -->
+            <div class="basicBOD1 publicationBox">
+              <span class="image left">
+                <img src="Members/2024Betania.jpeg" width="294" height="368" alt="Betania Arce"/>
+              </span>
+              <font size="4">
+                <b>Captain: Betania Arce</b>
+                <a href="mailto:hero_captain@jhu.edu" class="icon fa-envelope">
+                  <span class="label">Email</span>
+                </a>
+                <br><br>
+                Betania Arce is honored to be serving as the Captain for 2025. Betania is from Miami, Florida and is majoring in Biomedical Engineering (co 2026). She joined HERO as a prior EMT her freshman spring. As Captain, Betania helps oversee the operations of HERO. She has previously served as President and Secretary of HERO. Outside of HERO, Betania does research at Bayview and can be found enjoying a caffeinated beverage.
+              </font>
+            </div>
 
-      <!-- Lia Melvin -->
-      <div class="member-box">
-        <img src="Members/2024Lia.jpeg" alt="Lia Melvin"/>
-        <div class="member-info">
-          <h3>Equipment Officer: Lia Melvin <a href="mailto:hero_equipment@jhu.edu" class="icon fa-envelope">Email</a></h3>
-          <p>Lia is from Joppa, Maryland. She is majoring in Behavioral Biology with a Psychology minor. Lia joined HERO as a non-prior EMT in her freshman year (JHU class of '27). As Equipment Officer, she maintains HERO's inventory and squad room. Outside of HERO, Lia plays tennis on the JHU women’s tennis team. In her free time, she enjoys reading, hiking, and hanging out with friends.</p>
-        </div>
-      </div>
+            <div class="basicBOD1 publicationBox">
+              <span class="image left">
+                <img src="Members/2024Erika.jpeg" width="294" height="368" alt="Erika Flickinger"/>
+              </span>
+              <font size="4">
+                <b>President: Erika Flickinger</b>
+                <a href="mailto:hero_personnel@jhu.edu" class="icon fa-envelope">
+                  <span class="label">Email</span>
+                </a>
+                <br><br>
+                Erika is from Decatur, Illinois and is majoring in Computer Science & Cognitive Science (co 2026). She joined HERO as a non prior EMT her sophomore spring. As President, Erika helps lead BOD and connects with HERO admin. Outside of HERO, Erika enjoys yoga, spending time with friends, and exploring coffee shops.
+              </font>
+            </div>
 
-      <!-- Katie Chong -->
-      <div class="member-box">
-        <img src="Members/2024Katie.jpg" alt="Katie Chong"/>
-        <div class="member-info">
-          <h3>Recruitment Officer: Katie Chong <a href="mailto:hero_rr@jhu.edu" class="icon fa-envelope">Email</a></h3>
-          <p>Katie is a junior from Northern Virginia majoring in Molecular & Cellular Biology and minoring in Space Science & Engineering. She joined HERO as a new EMT during her freshman year. Outside of HERO, she is involved in aerospace medicine research at the JH Human Spaceflight Lab, a volunteer at the JH Hospital Adult Emergency Department, and a patroller with the National Ski Patrol. In her free time, she enjoys trying out new recipes, skiing, and hiking.</p>
-        </div>
-      </div>
+            <div class="basicBOD1 publicationBox">
+              <span class="image left">
+                <img src="Members/2024Clay.jpg" width="294" height="368" alt="Clayton Tomilinson"/>
+              </span>
+              <font size="4">
+                <b>Personnel Lieutenant: Clayton Tomilinson</b>
+                <a href="mailto:hero_captain@jhu.edu" class="icon fa-envelope">
+                  <span class="label">Email</span>
+                </a>
+                <br><br>
+                Clay is from Hunterdon county, New Jersey and is majoring in Molecular and Cellular Biology (JHU ‘27). He joined HERO as a prior EMT in his freshman year. As Personnel Lieutenant, Clay manages HERO logistics, schedules unit shifts, and helps coordinate standby events. He has previously served as a selection officer. Outside of HERO, Clay is a climbing instructor in Outdoor Pursuits and a camp counselor for Camp Kesem. In his free time, he enjoys reading, climbing, and volunteering with White Marsh Volunteer Fire Department.
+              </font>
+            </div>
 
-      <!-- Will Taggart -->
-      <div class="member-box">
-        <img src="Members/2024will.jpg" alt="Will Taggart"/>
-        <div class="member-info">
-          <h3>Training Officer: Will Taggart <a href="mailto:hero_training@jhu.edu" class="icon fa-envelope">Email</a></h3>
-          <p>Will is from Livermore, California, and is studying Public Health and Film/Media Studies (co 2026). He joined HERO as a new EMT his freshman fall. In addition to HERO, Will volunteers at White Marsh Volunteer Fire Company. Previously served as the Personnel Lieutenant, is a current Duty Officer, and is thrilled to be serving as HERO's Training Officer this year.</p>
-        </div>
-      </div>
+            <div class="basicBOD1 publicationBox">
+              <span class="image left">
+                <img src="Members/2024Grant.jpg" width="294" height="368" alt="Grant Dahl"/>
+              </span>
+              <font size="4">
+                <b>EMS Lieutenant: Grant Dahl</b>
+                <a href="mailto:hero_captain@jhu.edu" class="icon fa-envelope">
+                  <span class="label">Email</span>
+                </a>
+                <br><br>
+                Grant is from St. Louis, Missouri and is majoring in Neuroscience (co 2027). He joined HERO as a non prior EMT in his freshman spring. As EMS Lieutenant, he oversees promotions within the unit and also assists with onboarding probationary members. Outside of HERO, Grant enjoys whitewater kayaking, singing in his a cappella group, and playing sports.
+              </font>
+            </div>
 
-      <!-- Agastya Sinha -->
-      <div class="member-box">
-        <img src="Members/2025Agastya.PNG" alt="Agastya Sinha"/>
-        <div class="member-info">
-          <h3>Secretary: Agastya Sinha <a href="mailto:hero_secretary@jhu.edu" class="icon fa-envelope">Email</a></h3>
-          <p>Agastya is from Montgomery, New Jersey and is majoring in Molecular & Cellular Biology and German (JHU ‘28). He joined HERO as a non-prior EMT his freshman year. As Secretary, he helps document unit meetings and assists with community and alumni outreach. Outside of HERO, Agastya does T1D research at the Pathology Department and volunteers with Alzheimer’s Buddies and the JHADRC. He enjoys exploring new restaurants, watching football, and playing racquet sports.</p>
-        </div>
-      </div>
+            <div class="basicBOD1 publicationBox">
+              <span class="image left">
+                <img src="Members/2024Lia.jpeg" width="294" height="368" alt="Lia Melvin"/>
+              </span>
+              <font size="4">
+                <b>Equipment Officer: Lia Melvin</b>
+                <a href="mailto:hero_equipment@jhu.edu" class="icon fa-envelope">
+                  <span class="label">Email</span>
+                </a>
+                <br><br>
+                Lia is from Joppa, Maryland. She is majoring in Behavioral Biology with a Psychology minor. Lia joined HERO as a non-prior EMT in her freshman year (JHU class of '27). As Equipment Officer, she maintains HERO's inventory and our squad room. Outside of HERO, Lia plays tennis on the JHU women’s tennis team. In her free time, she enjoys reading, hiking, and hanging out with friends.
+              </font>
+            </div>
 
-      <!-- Nadia Almasri -->
-      <div class="member-box">
-        <img src="Members/2024Nadia.jpg" alt="Nadia Almasri"/>
-        <div class="member-info">
-          <h3>Treasurer: Nadia Almasri <a href="mailto:hero_treasurer@jhu.edu" class="icon fa-envelope">Email</a></h3>
-          <p>Nadia is from Fresno, California and is majoring in Molecular & Cell Biology and Spanish (JHU ‘27). She joined HERO as a non-prior her freshman year. As Treasurer, she oversees HERO finances—budgeting, fundraising, and coordinating with campus offices. Outside of HERO, Nadia volunteers as a reproductive health educator with the Violet Project, tutors in PILOT, and works in an immunology lab.</p>
-        </div>
-      </div>
+            <div class="basicBOD1 publicationBox">
+              <span class="image left">
+                <img src="Members/2024Katie.jpg" width="294" height="368" alt="Katie Chong"/>
+              </span>
+              <font size="4">
+                <b>Recruitment Officer: Katie Chong</b>
+                <a href="mailto:hero_rr@jhu.edu" class="icon fa-envelope">
+                  <span class="label">Email</span>
+                </a>
+                <br><br>
+                Katie is a junior from Northern Virginia majoring in Molecular & Cellular Biology and minoring in Space Science & Engineering. She joined HERO as a new EMT during her freshman year. Outside of HERO, she is involved in aerospace medicine research at the JH Human Spaceflight Lab, a volunteer at the JH Hospital Adult Emergency Department, and a patroller with the National Ski Patrol. In her free time, she enjoys trying out new recipes, skiing, and hiking.
+              </font>
+            </div>
 
-      <!-- Kristy Leiva -->
-      <div class="member-box">
-        <img src="Members/2025Kristy.JPG" alt="Kristy Leiva"/>
-        <div class="member-info">
-          <h3>Member At Large: Kristy Leiva <a href="mailto:hero_atlarge@jhu.edu" class="icon fa-envelope">Email</a></h3>
-          <p>Kristy is from Linden, New Jersey and is majoring in Neuroscience (JHU ‘27). She joined HERO as a non-prior EMT in her sophomore year. As Member-at-Large, she plans events and helps to bring the voice of all HERO members to the board. Outside of HERO, Kristy volunteers at the JHH Pediatric Emergency Department, is involved with PILOT, and a member of Alpha Phi. She enjoys hanging out with friends, exercising, and baking.</p>
-        </div>
-      </div>
+            <div class="basicBOD1 publicationBox">
+              <span class="image left">
+                <img src="Members/2024will.jpg" width="294" height="368" alt="Will Taggart"/>
+              </span>
+              <font size="4">
+                <b>Training Officer: Will Taggart</b>
+                <a href="mailto:hero_training@jhu.edu" class="icon fa-envelope">
+                  <span class="label">Email</span>
+                </a>
+                <br><br>
+                Will is from Livermore, California, and is studying Public Health and Film/Media Studies (co 2026). He joined HERO as a new EMT his freshman fall. In addition to HERO, Will volunteers at White Marsh Volunteer Fire Company. Outside of HERO, Will likes to run, make short films, and do smoking cessation research. He previously served as the Personnel Lieutenant, is a current Duty Officer, and is thrilled to be serving as HEROs Training Officer this year.
+              </font>
+            </div>
 
-      <!-- Coordinators -->
-      <header class="major"><h2>Coordinators</h2></header>
+            <div class="basicBOD1 publicationBox">
+              <span class="image left">
+                <img src="Members/2025Agastya.PNG" width="294" height="368" alt="Agastya Sinha"/>
+              </span>
+              <font size="4">
+                <b>Secretary: Agastya Sinha</b>
+                <a href="mailto:hero_secretary@jhu.edu" class="icon fa-envelope">
+                  <span class="label">Email</span>
+                </a>
+                <br><br>
+                Agastya is from Montgomery, New Jersey and is majoring in Molecular & Cellular Biology and German (JHU ‘28). He joined HERO as a non-prior EMT his freshman year. As Secretary, he helps document unit meetings and assists with community and alumni outreach. Outside of HERO, Agastya does T1D research at the Pathology Department and volunteers with Alzheimer’s Buddies and the JHADRC. He has previously served as an alumni coordinator. In his free time, he enjoys exploring new restaurants, watching football, and playing racquet sports.
+              </font>
+            </div>
 
-      <div class="member-box">
-        <img src="Members/2024Charlie.jpg" alt="Charlie Pearson"/>
-        <div class="member-info">
-          <h3>Training Coordinator: Charlie Pearson <a href="mailto:hero_captain@jhu.edu" class="icon fa-envelope">Email</a></h3>
-          <p>Charlie is a junior studying Public Health. Collaborates with the Training Officer and Dennis to design weekly trainings for HERO members.</p>
-        </div>
-      </div>
+            <div class="basicBOD1 publicationBox">
+              <span class="image left">
+                <img src="Members/2024Nadia.jpg" width="294" height="368" alt="Nadia Almasri"/>
+              </span>
+              <font size="4">
+                <b>Treasurer: Nadia Almasri</b>
+                <a href="mailto:hero_treasurer@jhu.edu" class="icon fa-envelope">
+                  <span class="label">Email</span>
+                </a>
+                <br><br>
+                Nadia is from Fresno, California and is majoring in Molecular & Cell Biology and Spanish (JHU ‘27). She joined HERO as a non-prior her freshman year. As Treasurer, she oversees HERO finances—budgeting, fundraising, and coordinating with campus offices. Outside of HERO, Nadia volunteers as a reproductive health educator with the Violet Project, tutors every subject she can in PILOT, and works in an immunology lab.
+              </font>
+            </div>
 
-      <div class="member-box">
-        <img src="Members/2024Dennis.jpg" alt="Dennis Ngo"/>
-        <div class="member-info">
-          <h3>Training Coordinator: Dennis Ngo <a href="mailto:hero_captain@jhu.edu" class="icon fa-envelope">Email</a></h3>
-          <p>Dennis is a junior studying Public Health. Collaborates with the Training Officer and Charlie to design weekly trainings for HERO members.</p>
-        </div>
-      </div>
+            <div class="basicBOD1 publicationBox">
+              <span class="image left">
+                <img src="Members/2025Kristy.JPG" width="294" height="368" alt="Kristy Leiva"/>
+              </span>
+              <font size="4">
+                <b>Member At Large: Kristy Leiva</b>
+                <a href="mailto:hero_atlarge@jhu.edu" class="icon fa-envelope">
+                  <span class="label">Email</span>
+                </a>
+                <br><br>
+                Kristy is from Linden, New Jersey and is majoring in Neuroscience (JHU ‘27). She joined HERO as a non-prior EMT in her sophomore year. As Member-at-Large, she plans events and helps to bring the voice of all HERO members to the board. Outside of HERO, Kristy volunteers at the JHH Pediatric Emergency Department, is involved with PILOT, and a member of Alpha Phi. In her free time, she enjoys hanging out with friends, exercising, and baking.
+              </font>
+            </div>
 
-      <div class="member-box">
-        <img src="Members/2025Bethania.JPG" alt="Bethania Robertson"/>
-        <div class="member-info">
-          <h3>CPR & Stop the Bleed Coordinator: Bethania Robertson <a href="mailto:hero_captain@jhu.edu" class="icon fa-envelope">Email</a></h3>
-          <p>Bethania is a junior studying Biomedical Engineering. She arranges HERO's CPR and Stop the Bleed classes for community members.</p>
-        </div>
-      </div>
+            <!-- Coordinators -->
+            <header class="major">
+              <h2>Meet the Coordinators</h2>
+            </header>
 
-      <div class="member-box">
-        <img src="Members/2025Justin.JPG" alt="Justin Blumenthal"/>
-        <div class="member-info">
-          <h3>Equipment Coordinator: Justin Blumenthal <a href="mailto:hero_captain@jhu.edu" class="icon fa-envelope">Email</a></h3>
-          <p>Justin is a sophomore majoring in Molecular and Cellular Biology. Assists Equipment Officer with inventory and squad room maintenance.</p>
-        </div>
-      </div>
+            <div class="basicBOD1 publicationBox">
+              <span class="image left">
+                <img src="Members/2024Charlie.jpg" width="294" height="368" alt="Charlie Pearson"/>
+              </span>
+              <font size="4">
+                <b>Training Coordinator: Charlie Pearson</b>
+                <a href="mailto:hero_captain@jhu.edu" class="icon fa-envelope">
+                  <span class="label">Email</span>
+                </a>
+                <br><br>
+                Charlie is a junior studying Public Health. He collaborates with the Training Officer, as well as Dennis, the other Training Coordinator, to design and execute customized weekly trainings to all HERO members, helping ensure our continued quality service.
+              </font>
+            </div>
 
-      <div class="member-box">
-        <img src="Members/2025Armaan.JPG" alt="Armaan Bilimoria"/>
-        <div class="member-info">
-          <h3>Alumni Coordinator: Armaan Bilimoria <a href="mailto:hero_captain@jhu.edu" class="icon fa-envelope">Email</a></h3>
-          <p>Armaan is a freshman studying Cognitive Science. Assists with alumni outreach and event organization.</p>
-        </div>
-      </div>
+            <div class="basicBOD1 publicationBox">
+              <span class="image left">
+                <img src="Members/2024Dennis.jpg" width="294" height="368" alt="Dennis Ngo"/>
+              </span>
+              <font size="4">
+                <b>Training Coordinator: Dennis Ngo</b>
+                <a href="mailto:hero_captain@jhu.edu" class="icon fa-envelope">
+                  <span class="label">Email</span>
+                </a>
+                <br><br>
+                Dennis is a junior studying Public Health. He collaborates with the Training Officer, as well as Charlie, the other Training Coordinator, to design and execute customized weekly trainings to all HERO members, helping ensure our continued quality service.
+              </font>
+            </div>
 
-      <div class="member-box">
-        <img src="Members/2025Eliya.jpeg" alt="Eliya Karoutchy"/>
-        <div class="member-info">
-          <h3>Standby Coordinator: Eliya Karoutchy <a href="mailto:hero_captain@jhu.edu" class="icon fa-envelope">Email</a></h3>
-          <p>Eliya is a sophomore majoring in Neuroscience and Psychology from Myrtle Beach, South Carolina. Coordinates standby emergency medical coverage for on- and off-campus events.</p>
-        </div>
-      </div>
+            <div class="basicBOD1 publicationBox">
+              <span class="image left">
+                <img src="Members/2025Bethania.JPG" width="294" height="368" alt="Bethania Robertson"/>
+              </span>
+              <font size="4">
+                <b>CPR & Stop the Bleed Coordinator: Bethania Robertson</b>
+                <a href="mailto:hero_captain@jhu.edu" class="icon fa-envelope">
+                  <span class="label">Email</span>
+                </a>
+                <br><br>
+                Bethania is a junior studying Biomedical Engineering. She arranges HERO's CPR and Stop the Bleed classes for community members.
+              </font>
+            </div>
 
-    </section>
+            <div class="basicBOD1 publicationBox">
+              <span class="image left">
+                <img src="Members/2025Justin.JPG" width="294" height="368" alt="Justin Blumenthal"/>
+              </span>
+              <font size="4">
+                <b>Equipment Coordinator: Justin Blumenthal</b>
+                <a href="mailto:hero_captain@jhu.edu" class="icon fa-envelope">
+                  <span class="label">Email</span>
+                </a>
+                <br><br>
+                Justin is a sophomore majoring in Molecular and Cellular Biology. He assists the Equipment Officer in organizing HERO's inventory, ensuring our supplies are ample and functional, and maintaining our squad room as an excellent space for HERO's various uses of it.
+              </font>
+            </div>
 
-    <!-- Selections Officers -->
-    <section>
-      <header class="major">
-        <h2>Selections Officers</h2>
-      </header>
-      <div class="officers-container">
-        <div class="officer">
-          <img src="Members/2025Russ.JPG" alt="Joshua Russman">
-          <div>Joshua Russman</div>
+            <div class="basicBOD1 publicationBox">
+              <span class="image left">
+                <img src="Members/2025Armaan.JPG" width="294" height="368" alt="Armaan Bilimoria"/>
+              </span>
+              <font size="4">
+                <b>Alumni Coordinator: Armaan Bilimoria</b>
+                <a href="mailto:hero_captain@jhu.edu" class="icon fa-envelope">
+                  <span class="label">Email</span>
+                </a>
+                <br><br>
+                Armaan is a freshman studying Cognitive Science. As an alumni coordinator, he assists with outreach to alumni members of HERO, ensuring that we continue to organize events that engage our talented alumni.
+              </font>
+            </div>
+
+            <div class="basicBOD1 publicationBox">
+              <span class="image left">
+                <img src="Members/2025Eliya.jpeg" width="294" height="368" alt="Eliya Karoutchy"/>
+              </span>
+              <font size="4">
+                <b>Standby Coordinator: Eliya Karoutchy</b>
+                <a href="mailto:hero_captain@jhu.edu" class="icon fa-envelope">
+                  <span class="label">Email</span>
+                </a>
+                <br><br>
+                Eliya is a sophomore majoring in neuroscience and psychology from Myrtle Beach, South Carolina. She works closely with campus event organizers and HERO members to schedule and coordinate standby emergency medical coverage for many of Hopkins’ on and off-campus events.
+              </font>
+            </div>
+
+          </article>
         </div>
-        <div class="officer">
-          <img src="Members/2024Jenna.jpg" alt="Jenna Lodhi">
-          <div>Jenna Lodhi</div>
-        </div>
-        <div class="officer">
-          <img src="Members/2025Will.jpeg" alt="William Wong">
-          <div>William Wong</div>
-        </div>
-        <div class="officer">
-          <img src="Members/2025DJ.JPG" alt="DJ Bassett">
-          <div>DJ Bassett</div>
+      </section>
+
+      <!-- Selections Officers -->
+      <section style="background-color: white; padding: 1.2em 0; border-radius: 8px; margin-bottom: 1.5em;">
+        <header class="minor" style="text-align: center; margin-bottom: 1em;">
+          <h2 style="font-size: 1.5em; margin: 0; color: #000;">Selections Officers</h2>
+        </header>
+        <div class="basicBOD1 publicationBox" style="display: flex; justify-content: center; align-items: flex-start; gap: 2.5em; flex-wrap: nowrap; text-align: center; background-color: white; color: #000;">
+          <div class="officer">
+            <img src="Members/2025Russ.JPG" width="200" height="260" alt="Joshua Russman" style="border-radius: 10px;">
+            <br>
+            <span style="font-size: 1em; font-weight: 600; color: #000;">Joshua Russman</span>
+          </div>
+          <div class="officer">
+            <img src="Members/2024Jenna.jpg" width="200" height="260" alt="Jenna Lodhi" style="border-radius: 10px;">
+            <br>
+           
+
         </div>
       </div>
     </section>
@@ -396,5 +345,6 @@
 <script src="assets/js/main.js"></script>
 </body>
 </html>
+
 
 
