@@ -11,7 +11,53 @@
         integrity="sha512-xh6Zc7rSgBuXpgc3pt9dlmQ2nV8iUPzZ7Myanq7xFyewcU6v9CMRyIoxDn4WJ4G1SskLw4q2IrvP1JgN+qYlgA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
-    body {background-color:#f9f9f9;}
+    body { background-color:#f9f9f9; margin:0; font-family: Arial, sans-serif; padding-top: 80px; }
+    
+    /* Header */
+    #header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.7em 1.5em;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      z-index: 1000;
+      flex-wrap: wrap;
+    }
+    #header h1 {
+      margin: 0;
+      font-size: 1em;
+      flex: 1 1 100%;
+      text-align: center;
+      word-break: break-word;
+    }
+    #header h1 a {
+      color: #000;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    #nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 1em;
+      justify-content: center;
+      flex-wrap: wrap;
+      width: 100%;
+    }
+    #nav ul li a {
+      color: #000;
+      text-decoration: none;
+      font-weight: 500;
+      padding: 0.4em 0.6em;
+      display: block;
+    }
+    
+    /* Member boxes */
     .member-box {
       display: flex;
       flex-wrap: wrap;
@@ -36,11 +82,15 @@
     .member-info h3 {
       margin-top: 0;
       margin-bottom: 0.5em;
+      color: #000;
     }
     .member-info p {
       margin: 0.5em 0 0 0;
       line-height: 1.5;
+      color: #000;
     }
+
+    /* Coordinators and officers */
     .officers-container {
       display: flex;
       flex-wrap: wrap;
@@ -55,40 +105,92 @@
       width: 100%;
       border-radius: 10px;
     }
+
+    /* Headers */
     header.major {
       margin-top: 2em;
       margin-bottom: 1em;
       text-align: center;
+      color: #000;
+    }
+
+    /* Responsive nav for small screens */
+    @media (max-width: 850px) {
+      #nav ul {
+        flex-direction: column;
+        display: none;
+        background: #fff;
+        padding: 1em;
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        position: absolute;
+        top: 70px;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+      }
+      #nav ul.show {
+        display: flex;
+      }
+    }
+
+    /* Menu toggle button */
+    #menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.5em;
+      cursor: pointer;
+      color: #000;
+    }
+    @media (max-width: 850px) {
+      #menu-toggle {
+        display: block;
+      }
     }
   </style>
 </head>
 <body>
 
 <div id="page-wrapper">
+
   <!-- Header -->
   <header id="header">
     <h1><a href="index.html">Hopkins Emergency Response Organization</a></h1>
+    <button id="menu-toggle"><i class="fas fa-bars"></i></button>
     <nav id="nav">
-      <ul>
-        <li class="special">
-          <a href="#menu" class="menuToggle"><span>Menu</span></a>
-          <div id="menu">
-            <ul>
-              <li><a href="index.html">Home</a></li>
-              <li><a href="board.html">Leadership Team</a></li>
-              <li><a href="oversight.html">Oversight</a></li>
-              <li><a href="members.html">Members</a></li>
-              <li><a href="recruitment.html">Recruitment Information</a></li>
-              <li><a href="resources.html">Member Resources</a></li>
-              <li><a href="accolades.html">Accolades</a></li>
-              <li><a href="contact.html">Contact Us</a></li>
-              <li><a href="updates.html">Member Updates</a></li>
-            </ul>
-          </div>
-        </li>
+      <ul id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="board.html">Leadership Team</a></li>
+        <li><a href="oversight.html">Oversight</a></li>
+        <li><a href="members.html">Members</a></li>
+        <li><a href="recruitment.html">Recruitment</a></li>
+        <li><a href="resources.html">Resources</a></li>
+        <li><a href="accolades.html">Accolades</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="updates.html">Updates</a></li>
       </ul>
     </nav>
   </header>
+
+  <script>
+    const toggle = document.getElementById('menu-toggle');
+    const navLinks = document.getElementById('nav-links');
+
+    toggle.addEventListener('click', () => {
+      navLinks.classList.toggle('show');
+      toggle.innerHTML = navLinks.classList.contains('show') 
+        ? "<i class='fas fa-times'></i>" 
+        : "<i class='fas fa-bars'></i>";
+    });
+
+    window.addEventListener('resize', () => {
+      if(window.innerWidth > 850){
+        navLinks.classList.remove('show');
+        toggle.innerHTML = "<i class='fas fa-bars'></i>";
+      }
+    });
+  </script>
 
   <!-- Main -->
   <article id="main">
@@ -294,4 +396,5 @@
 <script src="assets/js/main.js"></script>
 </body>
 </html>
+
 
