@@ -110,72 +110,151 @@
   <div id="page-wrapper">
 
     <!-- Header -->
-    <header id="header">
-      <h1>
-        <a href="index.html">Hopkins Emergency Response Organization</a>
-      </h1>
+<header id="header">
+  <h1>
+    <a href="index.html">Hopkins Emergency Response Organization</a>
+  </h1>
 
-      <!-- Hamburger button for mobile -->
-      <button id="menu-toggle" aria-label="Toggle menu">
-        <i class='fas fa-bars'></i>
-      </button>
+  <!-- Hamburger button for mobile -->
+  <button id="menu-toggle" aria-label="Toggle menu">
+    <i class="fas fa-bars"></i>
+  </button>
 
-      <!-- Nav Menu -->
-      <nav id="nav">
-        <ul id="nav-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="board.html">Board</a></li>
-          <li><a href="oversight.html">Oversight</a></li>
-          <li><a href="members.html">Members</a></li>
-          <li><a href="recruitment.html">Recruitment</a></li>
-          <li><a href="resources.html">Resources</a></li>
-          <li><a href="accolades.html">Accolades</a></li>
-          <li><a href="contact.html">Contact</a></li>
-          <li><a href="updates.html">Updates</a></li>
-        </ul>
-      </nav>
-    </header>
+  <!-- Nav Menu -->
+  <nav id="nav">
+    <ul id="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="board.html">Board</a></li>
+      <li><a href="oversight.html">Oversight</a></li>
+      <li><a href="members.html">Members</a></li>
+      <li><a href="recruitment.html">Recruitment</a></li>
+      <li><a href="resources.html">Resources</a></li>
+      <li><a href="accolades.html">Accolades</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="updates.html">Updates</a></li>
+    </ul>
+  </nav>
+</header>
 
-    <!-- Script for animated hamburger menu -->
-    <script>
-      const toggle = document.getElementById('menu-toggle');
-      const navLinks = document.getElementById('nav-links');
+<style>
+  #header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.6em 1.5em;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(6px);
+    z-index: 1000;
+    box-sizing: border-box;
+  }
 
-      function setupMobileMenu() {
-        if (window.innerWidth <= 850) {
-          toggle.style.display = 'block';
-          navLinks.style.display = 'none';
-        } else {
-          toggle.style.display = 'none';
-          navLinks.style.display = 'flex';
-          navLinks.style.opacity = '1';
-          navLinks.style.transform = 'none';
-        }
-      }
+  /* Title */
+  #header h1 {
+    margin: 0;
+    font-size: 1.1em;
+    line-height: 1.2em;
+    flex: 0 0 auto; /* prevents stretching over menu */
+    margin-right: 1em; /* space between title and nav */
+  }
 
-      toggle.addEventListener('click', () => {
-        if (navLinks.style.display === 'none' || navLinks.style.display === '') {
-          navLinks.style.display = 'flex';
-          setTimeout(() => {
-            navLinks.style.opacity = '1';
-            navLinks.style.transform = 'translateY(0)';
-          }, 10);
-          toggle.innerHTML = "<i class='fas fa-times'></i>";
-        } else {
-          navLinks.style.opacity = '0';
-          navLinks.style.transform = 'translateY(-10px)';
-          setTimeout(() => {
-            navLinks.style.display = 'none';
-          }, 250);
-          toggle.innerHTML = "<i class='fas fa-bars'></i>";
-        }
-      });
+  #header h1 a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    white-space: nowrap;
+  }
 
-      window.addEventListener('resize', setupMobileMenu);
-      window.addEventListener('load', setupMobileMenu);
-    </script>
+  /* Hamburger */
+  #menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5em;
+    cursor: pointer;
+  }
 
+  /* Navigation */
+  #nav ul {
+    display: flex;
+    gap: 1.2em;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+    justify-content: flex-end;
+  }
 
+  #nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  /* Mobile */
+  @media (max-width: 850px) {
+    #menu-toggle {
+      display: block;
+    }
+
+    #nav ul {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 3.2em;
+      right: 1.5em;
+      background: rgba(0,0,0,0.95);
+      padding: 1em 1.5em;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      opacity: 0;
+      transform: translateY(-10px);
+      z-index: 1010; /* above header */
+    }
+  }
+</style>
+
+<script>
+  const toggle = document.getElementById('menu-toggle');
+  const navLinks = document.getElementById('nav-links');
+
+  function setupMobileMenu() {
+    if (window.innerWidth <= 850) {
+      toggle.style.display = 'block';
+      navLinks.style.display = 'none';
+    } else {
+      toggle.style.display = 'none';
+      navLinks.style.display = 'flex';
+      navLinks.style.opacity = '1';
+      navLinks.style.transform = 'none';
+    }
+  }
+
+  toggle.addEventListener('click', () => {
+    if (navLinks.style.display === 'none' || navLinks.style.display === '') {
+      navLinks.style.display = 'flex';
+      setTimeout(() => {
+        navLinks.style.opacity = '1';
+        navLinks.style.transform = 'translateY(0)';
+      }, 10);
+      toggle.innerHTML = "<i class='fas fa-times'></i>";
+    } else {
+      navLinks.style.opacity = '0';
+      navLinks.style.transform = 'translateY(-10px)';
+      setTimeout(() => {
+        navLinks.style.display = 'none';
+      }, 250);
+      toggle.innerHTML = "<i class='fas fa-bars'></i>";
+    }
+  });
+
+  window.addEventListener('resize', setupMobileMenu);
+  window.addEventListener('load', setupMobileMenu);
+</script>
+    
     <!-- Banner -->
     <section id="banner">
       <div class="inner">
@@ -334,6 +413,7 @@
 
 </body>
 </html>
+
 
 
 
