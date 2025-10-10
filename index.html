@@ -111,18 +111,19 @@
   <!-- Page Wrapper -->
   <div id="page-wrapper">
 
-    <!-- Header -->
+<!-- Header -->
 <header id="header">
+  <!-- Title always on top -->
   <h1>
     <a href="index.html">Hopkins Emergency Response Organization</a>
   </h1>
 
-  <!-- Hamburger button for mobile -->
+  <!-- Hamburger for mobile -->
   <button id="menu-toggle" aria-label="Toggle menu">
     <i class="fas fa-bars"></i>
   </button>
 
-  <!-- Nav Menu -->
+  <!-- Navigation -->
   <nav id="nav">
     <ul id="nav-links">
       <li><a href="index.html">Home</a></li>
@@ -143,33 +144,23 @@
     position: fixed;
     top: 0;
     width: 100%;
+    background: rgba(0,0,0,0.85);
     display: flex;
+    flex-direction: column; /* Stack title above menu */
     align-items: center;
-    justify-content: space-between;
     padding: 0.6em 1.5em;
-    background: rgba(0, 0, 0, 0.85);
-    backdrop-filter: blur(6px);
     z-index: 1000;
+    backdrop-filter: blur(6px);
     box-sizing: border-box;
   }
 
-  /* Title */
   #header h1 {
     margin: 0;
-    font-size: 1.1em;
-    line-height: 1.2em;
-    flex: 0 0 auto; /* prevents stretching over menu */
-    margin-right: 1em; /* space between title and nav */
-  }
-
-  #header h1 a {
+    font-size: 1.2em;
     color: white;
-    text-decoration: none;
-    font-weight: 600;
-    white-space: nowrap;
+    text-align: center;
   }
 
-  /* Hamburger */
   #menu-toggle {
     display: none;
     background: none;
@@ -177,17 +168,17 @@
     color: white;
     font-size: 1.5em;
     cursor: pointer;
+    margin-top: 0.3em;
   }
 
-  /* Navigation */
   #nav ul {
     display: flex;
     gap: 1.2em;
     list-style: none;
     margin: 0;
     padding: 0;
-    align-items: center;
-    justify-content: flex-end;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
   #nav ul li a {
@@ -201,20 +192,15 @@
     #menu-toggle {
       display: block;
     }
-
     #nav ul {
       display: none;
       flex-direction: column;
-      position: absolute;
-      top: 3.2em;
-      right: 1.5em;
+      margin-top: 0.5em;
       background: rgba(0,0,0,0.95);
       padding: 1em 1.5em;
       border-radius: 10px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-      opacity: 0;
-      transform: translateY(-10px);
-      z-index: 1010; /* above header */
+      text-align: center;
     }
   }
 </style>
@@ -223,38 +209,21 @@
   const toggle = document.getElementById('menu-toggle');
   const navLinks = document.getElementById('nav-links');
 
-  function setupMobileMenu() {
-    if (window.innerWidth <= 850) {
-      toggle.style.display = 'block';
-      navLinks.style.display = 'none';
-    } else {
-      toggle.style.display = 'none';
-      navLinks.style.display = 'flex';
-      navLinks.style.opacity = '1';
-      navLinks.style.transform = 'none';
-    }
-  }
-
   toggle.addEventListener('click', () => {
     if (navLinks.style.display === 'none' || navLinks.style.display === '') {
       navLinks.style.display = 'flex';
-      setTimeout(() => {
-        navLinks.style.opacity = '1';
-        navLinks.style.transform = 'translateY(0)';
-      }, 10);
-      toggle.innerHTML = "<i class='fas fa-times'></i>";
     } else {
-      navLinks.style.opacity = '0';
-      navLinks.style.transform = 'translateY(-10px)';
-      setTimeout(() => {
-        navLinks.style.display = 'none';
-      }, 250);
-      toggle.innerHTML = "<i class='fas fa-bars'></i>";
+      navLinks.style.display = 'none';
     }
   });
 
-  window.addEventListener('resize', setupMobileMenu);
-  window.addEventListener('load', setupMobileMenu);
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 850) {
+      navLinks.style.display = 'flex';
+    } else {
+      navLinks.style.display = 'none';
+    }
+  });
 </script>
     
     <!-- Banner -->
@@ -415,6 +384,7 @@
 
 </body>
 </html>
+
 
 
 
