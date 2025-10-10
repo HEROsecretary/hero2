@@ -6,6 +6,8 @@
 -->
 <html lang="en">
 
+<!DOCTYPE HTML>
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
@@ -22,60 +24,50 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
         integrity="sha512-xh6Zc7rSgBuXpgc3pt9dlmQ2nV8iUPzZ7Myanq7xFyewcU6v9CMRyIoxDn4WJ4G1SskLw4q2IrvP1JgN+qYlgA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-</head>
-
-<body class="landing is-preload">
-
-  <!-- Page Wrapper -->
-  <div id="page-wrapper">
-
-   <!-- Header -->
-<header id="header" style="
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background: rgba(0,0,0,0.85);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0.6em 1.5em;
-  z-index: 1000;
-  backdrop-filter: blur(6px);
-  box-sizing: border-box;
-  transition: background 0.3s ease;
-">
-  <h1 style="
-    margin: 0;
-    font-size: 1.1em;
-    line-height: 1.2em;
-    flex: 1;
-  ">
-    <a href="index.html" style="
+  
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      padding-top: 60px; /* space for fixed header */
+      background-color: #f9f9f9;
+    }
+    #header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(0,0,0,0.85);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.6em 1.5em;
+      z-index: 1000;
+      backdrop-filter: blur(6px);
+      box-sizing: border-box;
+      transition: background 0.3s ease;
+    }
+    #header h1 {
+      margin: 0;
+      font-size: 1.1em;
+      line-height: 1.2em;
+      flex: 1;
+    }
+    #header h1 a {
       color: white;
       text-decoration: none;
       font-weight: 600;
       white-space: nowrap;
-    ">
-      Hopkins Emergency Response Organization
-    </a>
-  </h1>
-
-  <!-- Hamburger button for mobile -->
-  <button id="menu-toggle" aria-label="Toggle menu" style="
-    display: none;
-    background: none;
-    border: none;
-    color: white;
-    font-size: 1.5em;
-    cursor: pointer;
-    transition: transform 0.2s ease;
-  ">
-    <i class='fas fa-bars'></i>
-  </button>
-
-  <!-- Nav Menu -->
-  <nav id="nav" style="flex: 2;">
-    <ul id="nav-links" style="
+    }
+    #menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1.5em;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+    #nav ul {
       list-style: none;
       margin: 0;
       padding: 0;
@@ -85,71 +77,104 @@
       justify-content: flex-end;
       flex-wrap: wrap;
       transition: opacity 0.3s ease, transform 0.3s ease;
-    ">
-      <li><a href="index.html" style="color: white; text-decoration: none; font-weight: 500;">Home</a></li>
-      <li><a href="board.html" style="color: white; text-decoration: none; font-weight: 500;">Board</a></li>
-      <li><a href="oversight.html" style="color: white; text-decoration: none; font-weight: 500;">Oversight</a></li>
-      <li><a href="members.html" style="color: white; text-decoration: none; font-weight: 500;">Members</a></li>
-      <li><a href="recruitment.html" style="color: white; text-decoration: none; font-weight: 500;">Recruitment</a></li>
-      <li><a href="resources.html" style="color: white; text-decoration: none; font-weight: 500;">Resources</a></li>
-      <li><a href="accolades.html" style="color: white; text-decoration: none; font-weight: 500;">Accolades</a></li>
-      <li><a href="contact.html" style="color: white; text-decoration: none; font-weight: 500;">Contact</a></li>
-      <li><a href="updates.html" style="color: white; text-decoration: none; font-weight: 500;">Updates</a></li>
-    </ul>
-  </nav>
-</header>
-
-<!-- Script for animated hamburger menu -->
-<script>
-  const toggle = document.getElementById('menu-toggle');
-  const navLinks = document.getElementById('nav-links');
-
-  function setupMobileMenu() {
-    if (window.innerWidth <= 850) {
-      toggle.style.display = 'block';
-      navLinks.style.display = 'none';
-      navLinks.style.flexDirection = 'column';
-      navLinks.style.position = 'absolute';
-      navLinks.style.top = '3.2em';
-      navLinks.style.right = '1.5em';
-      navLinks.style.background = 'rgba(0,0,0,0.95)';
-      navLinks.style.padding = '1em 1.5em';
-      navLinks.style.borderRadius = '10px';
-      navLinks.style.boxShadow = '0 4px 12px rgba(0,0,0,0.3)';
-      navLinks.style.opacity = '0';
-      navLinks.style.transform = 'translateY(-10px)';
-    } else {
-      toggle.style.display = 'none';
-      navLinks.style.display = 'flex';
-      navLinks.style.position = 'static';
-      navLinks.style.background = 'none';
-      navLinks.style.padding = '0';
-      navLinks.style.opacity = '1';
-      navLinks.style.transform = 'none';
     }
-  }
-
-  toggle.addEventListener('click', () => {
-    if (navLinks.style.display === 'none' || navLinks.style.display === '') {
-      navLinks.style.display = 'flex';
-      setTimeout(() => {
-        navLinks.style.opacity = '1';
-        navLinks.style.transform = 'translateY(0)';
-      }, 10);
-      toggle.innerHTML = "<i class='fas fa-times'></i>";
-    } else {
-      navLinks.style.opacity = '0';
-      navLinks.style.transform = 'translateY(-10px)';
-      setTimeout(() => {
-        navLinks.style.display = 'none';
-      }, 250);
-      toggle.innerHTML = "<i class='fas fa-bars'></i>";
+    #nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
     }
-  });
+    @media (max-width: 850px) {
+      #menu-toggle {
+        display: block;
+      }
+      #nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 3.2em;
+        right: 1.5em;
+        background: rgba(0,0,0,0.95);
+        padding: 1em 1.5em;
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+    }
+  </style>
+</head>
 
-  window.addEventListener('resize', setupMobileMenu);
-  window.addEventListener('load', setupMobileMenu);
-</script>
+<body class="landing is-preload">
+
+  <!-- Page Wrapper -->
+  <div id="page-wrapper">
+
+    <!-- Header -->
+    <header id="header">
+      <h1>
+        <a href="index.html">Hopkins Emergency Response Organization</a>
+      </h1>
+
+      <!-- Hamburger button for mobile -->
+      <button id="menu-toggle" aria-label="Toggle menu">
+        <i class='fas fa-bars'></i>
+      </button>
+
+      <!-- Nav Menu -->
+      <nav id="nav">
+        <ul id="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="board.html">Board</a></li>
+          <li><a href="oversight.html">Oversight</a></li>
+          <li><a href="members.html">Members</a></li>
+          <li><a href="recruitment.html">Recruitment</a></li>
+          <li><a href="resources.html">Resources</a></li>
+          <li><a href="accolades.html">Accolades</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="updates.html">Updates</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Script for animated hamburger menu -->
+    <script>
+      const toggle = document.getElementById('menu-toggle');
+      const navLinks = document.getElementById('nav-links');
+
+      function setupMobileMenu() {
+        if (window.innerWidth <= 850) {
+          toggle.style.display = 'block';
+          navLinks.style.display = 'none';
+        } else {
+          toggle.style.display = 'none';
+          navLinks.style.display = 'flex';
+          navLinks.style.opacity = '1';
+          navLinks.style.transform = 'none';
+        }
+      }
+
+      toggle.addEventListener('click', () => {
+        if (navLinks.style.display === 'none' || navLinks.style.display === '') {
+          navLinks.style.display = 'flex';
+          setTimeout(() => {
+            navLinks.style.opacity = '1';
+            navLinks.style.transform = 'translateY(0)';
+          }, 10);
+          toggle.innerHTML = "<i class='fas fa-times'></i>";
+        } else {
+          navLinks.style.opacity = '0';
+          navLinks.style.transform = 'translateY(-10px)';
+          setTimeout(() => {
+            navLinks.style.display = 'none';
+          }, 250);
+          toggle.innerHTML = "<i class='fas fa-bars'></i>";
+        }
+      });
+
+      window.addEventListener('resize', setupMobileMenu);
+      window.addEventListener('load', setupMobileMenu);
+    </script>
+
 
     <!-- Banner -->
     <section id="banner">
@@ -309,5 +334,6 @@
 
 </body>
 </html>
+
 
 
