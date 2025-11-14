@@ -4,88 +4,58 @@
     <title>Member Updates</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- HTML5UP Main Stylesheet -->
     <link rel="stylesheet" href="assets/css/main.css" />
+
+    <!-- Bootstrap 3 CSS (for carousel only) -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
+
     <style>
-        /* Custom Styles */
-body {
-    color: #000000; /* Default text color to black for better readability on white background */
-    background-color: #ffffff; /* Background color for body */
-}
+        /* --- CUSTOM STYLES --- */
+        body {
+            color: #000000;
+            background-color: #ffffff;
+        }
+        header {
+            background-color: #003366;
+            padding: 10px 0;
+            border-bottom: 1px solid #ddd;
+            color: #ffffff;
+        }
+        header h1 a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+        nav#nav ul li a {
+            color: #ffffff;
+            text-decoration: none;
+        }
 
-header {
-    background-color: #f8f8f8; /* Background color for header */
-    padding: 10px 0; /* Padding around the header content */
-    border-bottom: 1px solid #ddd; /* Bottom border for the header */
-    color: #ffffff; /* Text color for header */
-}
-
-header h1 {
-    margin: 0;
-    padding: 0;
-    text-align: center;
-    font-size: 1.2em; /* Adjust the font size of the title */
-}
-
-header h1 a {
-    color: #ffffff; /* Title font color to white */
-    text-decoration: none; /* Remove underline from the link */
-}
-
-nav#nav {
-    text-align: center;
-}
-
-nav#nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-nav#nav ul li {
-    display: inline;
-    margin-right: 10px;
-}
-
-nav#nav ul li a {
-    color: #ffffff; /* Menu item font color to white */
-    text-decoration: none; /* Remove underline from the links */
-    padding: 5px 10px;
-}
-
+        /* Carousel */
         .carousel-caption {
             position: absolute;
             bottom: 20px;
             left: 20px;
             z-index: 10;
-            color: #ffffff; /* Caption text color to white */
+            color: #ffffff;
         }
 
         .wrapper.style5 {
-            background-color: #f4f4f4; /* Light gray background color for the wrapper */
+            background-color: #f4f4f4;
             padding: 20px;
             border-radius: 10px;
         }
 
-        .inner {
-            text-align: center;
-        }
-
-        .carousel-control {
-            background-image: none; /* Remove default background image for controls */
-            color: #333; /* Control arrow color */
-        }
-
-        .carousel-control.left {
-            left: 10px;
-        }
-
+        .carousel-control.left,
         .carousel-control.right {
-            right: 10px;
+            background-image: none;
+            color: #333;
         }
     </style>
 </head>
+
 <body>
-    <!-- Page Wrapper -->
     <div id="page-wrapper">
 
         <!-- Header -->
@@ -103,6 +73,7 @@ nav#nav ul li a {
                                 <li><a href="recruitment.html">Recruitment Information</a></li>
                                 <li><a href="resources.html">Member Resources</a></li>
                                 <li><a href="accolades.html">Accolades</a></li>
+                                <li><a href="alumni.html">Alumni</a></li>
                                 <li><a href="contact.html">Contact Us</a></li>
                                 <li><a href="updates.html">Member Updates</a></li>
                             </ul>
@@ -117,10 +88,13 @@ nav#nav ul li a {
             <header>
                 <h2>Member Updates</h2>
             </header>
+
             <section class="wrapper style5">
                 <div class="inner">
+
                     <!-- Carousel -->
-                    <div id="myCarousel" class="carousel slide">
+                    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+
                         <!-- Indicators -->
                         <ol class="carousel-indicators">
                             <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -128,25 +102,21 @@ nav#nav ul li a {
                             <li data-target="#myCarousel" data-slide-to="2"></li>
                         </ol>
 
-                        <!-- Wrapper for slides -->
+                        <!-- Slides -->
                         <div class="carousel-inner">
                             <div class="item active">
-                                <img src="images/2023HEROSQUAD.jpeg" alt="CPR Class">
-                                <div class="carousel-caption">
-                                    <h1>HERO 2023 Squad!</h1>
-                                </div>
+                                <img src="images/2023HEROSQUAD.jpeg" alt="HERO 2023 Squad" />
+                                <div class="carousel-caption"><h1>HERO 2023 Squad!</h1></div>
                             </div>
+
                             <div class="item">
-                                <img src="images/2023hero.JPEG" alt="HERO 2024 Squad">
-                                <div class="carousel-caption">
-                                    <h1>HERO 2024 Squad</h1>
-                                </div>
+                                <img src="images/2023hero.JPEG" alt="HERO 2024 Squad" />
+                                <div class="carousel-caption"><h1>HERO 2024 Squad</h1></div>
                             </div>
+
                             <div class="item">
-                                <img src="images/2023NEWCLASS.jpeg" alt="HERO 2019 Squad">
-                                <div class="carousel-caption">
-                                    <h1>2024 New HERO Class</h1>
-                                </div>
+                                <img src="images/2023NEWCLASS.jpeg" alt="2024 New HERO Class" />
+                                <div class="carousel-caption"><h1>2024 New HERO Class</h1></div>
                             </div>
                         </div>
 
@@ -163,17 +133,23 @@ nav#nav ul li a {
         </article>
     </div>
 
-    <!-- jQuery and Bootstrap JavaScript via CDN -->
+    <!-- jQuery & Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
-    <!-- Initialize Carousel -->
+    <!-- HTML5UP Menu Script -->
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/skel.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+
+    <!-- Carousel Initialization -->
     <script>
-        $(document).ready(function() {
-            $('#myCarousel').carousel({
-                interval: 3000 // Time in milliseconds (e.g., 3000ms = 3 seconds)
-            });
+        $(document).ready(function () {
+            $('#myCarousel').carousel({ interval: 3000 });
         });
     </script>
+
 </body>
 </html>
