@@ -1,244 +1,137 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Member Updates</title>
+    <title>Member Updates</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- Bootstrap FIRST so main.css can override Bootstrap where intended -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
+    <!-- Load Bootstrap FIRST (so HTML5UP overrides win) -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
 
-  <!-- HTML5UP / site stylesheet -->
-  <link rel="stylesheet" href="assets/css/main.css" />
+    <!-- HTML5UP main stylesheet (must load AFTER Bootstrap) -->
+    <link rel="stylesheet" href="assets/css/main.css" />
 
-  <style>
-    /* Conservative, non-destructive fixes */
+    <style>
+        /* Force correct header styling from Spectral theme */
+        #header h1 a {
+            font-size: 2rem !important;
+            line-height: 1.4 !important;
+            font-weight: 700 !important;
+            text-decoration: none !important;
+        }
 
-    /* Don't force a new font-family here; let main.css handle it.
-       Set predictable weights so things aren't overly bold. */
-    html, body {
-      font-weight: 400;
-      color: #000;
-      background: #fff;
-    }
+        #header {
+            padding: 2.5em 0 1.5em 0 !important;
+        }
 
-    /* Header title sizing and behavior */
-    #header {
-      /* do not set font-family here; main.css handles it */
-      padding: 0.6rem 0;
-    }
-    #header h1 {
-      margin: 0;
-      font-size: 1.05rem;      /* control the title size so it's not gigantic */
-      line-height: 1.1;
-      font-weight: 700;
-      text-align: center;
-    }
-    /* Remove underline on link and keep an accessible focus outline */
-    #header h1 a, #header h1 a:visited {
-      text-decoration: none;
-      color: inherit;
-    }
-    #header h1 a:focus {
-      outline: 3px solid rgba(0,102,153,0.16);
-      text-decoration: none;
-    }
+        /* Fix Member Updates title */
+        article#main > header h2 {
+            font-size: 2.5rem !important;
+            font-weight: 700 !important;
+        }
 
-    /* Page H2 sizing */
-    #main header h2 {
-      font-size: 1.6rem;
-      font-weight: 600;
-      margin-bottom: 0.5rem;
-    }
-
-    /* Make sure menu links look normal */
-    nav#nav ul li a { text-decoration: none; font-weight: 500; }
-
-    /* Minimal menu display rules (non-invasive) */
-    #menu {
-      display: none;
-      position: absolute;
-      right: 1rem;
-      top: 3.8rem;
-      background: #fff;
-      border-radius: 6px;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.12);
-      z-index: 2000;
-      min-width: 180px;
-      padding: 0.6rem;
-    }
-    #menu ul { margin:0; padding:0; list-style:none; }
-    #menu ul li a { display:block; padding:0.45rem 0.6rem; color:#222; }
-
-    #menu.active { display: block; }
-
-    /* Carousel responsive */
-    .carousel-inner > .item > img {
-      width: 100%;
-      height: auto;
-      display: block;
-      margin: 0 auto;
-      max-height: 650px; /* optional safeguard so extremely tall images don't dominate */
-      object-fit: cover;
-    }
-
-    /* small screens */
-    @media (max-width: 768px) {
-      #menu { right: 0.6rem; left: 0.6rem; top: 3.6rem; min-width: auto; }
-      #header h1 { font-size: 1rem; }
-      #main header h2 { font-size: 1.35rem; }
-    }
-  </style>
+        /* Carousel caption font consistency */
+        .carousel-caption h1 {
+            font-family: inherit !important;
+            font-weight: 700 !important;
+            font-size: 2.2rem !important;
+        }
+    </style>
 </head>
-
 <body>
-  <div id="page-wrapper">
-    <!-- Header -->
-    <header id="header">
-      <h1><a href="index.html">Hopkins Emergency Response Organization</a></h1>
+<div id="page-wrapper">
 
-      <nav id="nav" aria-label="Main navigation">
-        <ul>
-          <li class="special">
-            <!-- keep href="#menu" for semantics but JS prevents default -->
-            <a href="#menu" class="menuToggle" aria-expanded="false" aria-controls="menu"><span>Menu</span></a>
+<header id="header">
+<h1><a href="index.html">Hopkins Emergency Response Organization</a></h1>
+<nav id="nav">
+<ul>
+<li class="special">
+<a href="#menu" class="menuToggle"><span>Menu</span></a>
+<div id="menu">
+<ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="board.html">Board of Directors</a></li>
+    <li><a href="members.html">Members</a></li>
+    <li><a href="recruitment.html">Recruitment Information</a></li>
+    <li><a href="resources.html">Member Resources</a></li>
+    <li><a href="accolades.html">Accolades</a></li>
+    <li><a href="alumni.html">Alumni</a></li>
+    <li><a href="contact.html">Contact Us</a></li>
+    <li><a href="updates.html">Member Updates</a></li>
+</ul>
+</div>
+</li>
+</ul>
+</nav>
+</header>
 
-            <div id="menu" role="menu" aria-hidden="true">
-              <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="board.html">Board of Directors</a></li>
-                <li><a href="members.html">Members</a></li>
-                <li><a href="recruitment.html">Recruitment Information</a></li>
-                <li><a href="resources.html">Member Resources</a></li>
-                <li><a href="accolades.html">Accolades</a></li>
-                <li><a href="alumni.html">Alumni</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
-                <li><a href="updates.html">Member Updates</a></li>
-              </ul>
-            </div>
-          </li>
-        </ul>
-      </nav>
-    </header>
+<article id="main">
+<header>
+<h2>Member Updates</h2>
+</header>
+<section class="wrapper style5">
+<div class="inner">
 
-    <!-- Main -->
-    <article id="main">
-      <header>
-        <h2>Member Updates</h2>
-      </header>
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
 
-      <section class="wrapper style5">
-        <div class="inner">
-          <!-- Carousel -->
-          <div id="myCarousel" class="carousel slide" data-ride="carousel" aria-roledescription="carousel">
-            <!-- Indicators -->
-            <ol class="carousel-indicators">
-              <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-              <li data-target="#myCarousel" data-slide-to="1"></li>
-              <li data-target="#myCarousel" data-slide-to="2"></li>
-            </ol>
+<ol class="carousel-indicators">
+<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+<li data-target="#myCarousel" data-slide-to="1"></li>
+<li data-target="#myCarousel" data-slide-to="2"></li>
+</ol>
 
-            <!-- Slides -->
-            <div class="carousel-inner" role="listbox">
-              <div class="item active">
-                <img src="images/2023HEROSQUAD.jpeg" alt="HERO 2023 Squad" />
-                <div class="carousel-caption"><h1>HERO 2023 Squad!</h1></div>
-              </div>
-              <div class="item">
-                <img src="images/2023hero.JPEG" alt="HERO 2024 Squad" />
-                <div class="carousel-caption"><h1>HERO 2024 Squad</h1></div>
-              </div>
-              <div class="item">
-                <img src="images/2023NEWCLASS.jpeg" alt="2024 New HERO Class" />
-                <div class="carousel-caption"><h1>2024 New HERO Class</h1></div>
-              </div>
-            </div>
+<div class="carousel-inner">
+    <div class="item active">
+        <img src="images/2023HEROSQUAD.jpeg" alt="HERO 2023 Squad" />
+        <div class="carousel-caption"><h1>HERO 2023 Squad!</h1></div>
+    </div>
+    <div class="item">
+        <img src="images/2023hero.JPEG" alt="HERO 2024 Squad" />
+        <div class="carousel-caption"><h1>HERO 2024 Squad</h1></div>
+    </div>
+    <div class="item">
+        <img src="images/2023NEWCLASS.jpeg" alt="2024 New HERO Class" />
+        <div class="carousel-caption"><h1>2024 New HERO Class</h1></div>
+    </div>
+</div>
 
-            <!-- Controls -->
-            <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-              <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-              <span class="sr-only">Previous</span>
-            </a>
-            <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-              <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-              <span class="sr-only">Next</span>
-            </a>
-          </div>
-        </div>
-      </section>
-    </article>
-  </div>
+<a class="left carousel-control" href="#myCarousel" data-slide="prev">
+<span class="glyphicon glyphicon-chevron-left"></span>
+</a>
+<a class="right carousel-control" href="#myCarousel" data-slide="next">
+<span class="glyphicon glyphicon-chevron-right"></span>
+</a>
 
-  <!-- SCRIPTS -->
+</div>
+</div>
+</section>
+</article>
+</div>
 
-  <!-- jQuery -->
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!-- Scripts -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
-  <!-- Bootstrap JS -->
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src="assets/js/jquery.scrollex.min.js"></script>
+<script src="assets/js/jquery.scrolly.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/skel.min.js"></script>
 
-  <!-- OPTIONAL: keep HTML5UP scripts uncommented if your site uses them
-       (they can run before our small menu override below) -->
-  <!--
-  <script src="assets/js/jquery.scrollex.min.js"></script>
-  <script src="assets/js/jquery.scrolly.min.js"></script>
-  <script src="assets/js/skel.min.js"></script>
-  <script src="assets/js/util.js"></script>
-  <script src="assets/js/main.js"></script>
-  -->
+<!-- Force menu to actually toggle -->
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const toggle = document.querySelector(".menuToggle");
+    const menu = document.querySelector("#menu");
 
-  <!-- Robust menu toggle script (vanilla JS)
-       - attaches to the visible .menuToggle and #menu
-       - prevents default jump, toggles .active, handles outside-click and ESC -->
-  <script>
-    (function () {
-      const menuToggle = document.querySelector('.menuToggle');
-      const menu = document.querySelector('#menu');
-
-      if (!menuToggle || !menu) return;
-
-      function openMenu() {
-        menu.classList.add('active');
-        menu.setAttribute('aria-hidden', 'false');
-        menuToggle.setAttribute('aria-expanded', 'true');
-      }
-      function closeMenu() {
-        menu.classList.remove('active');
-        menu.setAttribute('aria-hidden', 'true');
-        menuToggle.setAttribute('aria-expanded', 'false');
-      }
-      function toggleMenu(e) {
+    toggle.addEventListener("click", function(e) {
         e.preventDefault();
-        if (menu.classList.contains('active')) closeMenu();
-        else openMenu();
-      }
+        document.body.classList.toggle("is-menu-visible");
+    });
+});
+</script>
 
-      menuToggle.addEventListener('click', toggleMenu);
-
-      // close on outside click
-      document.addEventListener('click', function (e) {
-        if (!menu.classList.contains('active')) return;
-        if (menu.contains(e.target) || menuToggle.contains(e.target)) return;
-        closeMenu();
-      });
-
-      // close on ESC
-      document.addEventListener('keydown', function (e) {
-        if (e.key === 'Escape' || e.key === 'Esc') closeMenu();
-      });
-
-      // prevent anchor default on mousedown (helpful on mobile)
-      menuToggle.addEventListener('mousedown', function (e) { e.preventDefault(); });
-    })();
-  </script>
-
-  <!-- Keep your carousel behavior -->
-  <script>
-    (function () {
-      if (window.jQuery && $('#myCarousel').length) {
-        $('#myCarousel').carousel({ interval: 3000 });
-      }
-    })();
-  </script>
 </body>
 </html>
