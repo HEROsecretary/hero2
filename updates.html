@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="assets/css/main.css" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <!-- Removed Bootstrap CSS to prevent conflicts -->
 </head>
 <body>
     <!-- Page Wrapper -->
@@ -18,7 +18,7 @@
                 <ul>
                     <li class="special">
                         <a href="#menu" class="menuToggle"><span>Menu</span></a>
-                        <div id="menu" class="menu-content">
+                        <div id="menu">
                             <ul>
                                 <li><a href="index.html">Home</a></li>
                                 <li><a href="board.html">Leadership Team</a></li>
@@ -44,7 +44,7 @@
             <section class="wrapper style5">
                 <div class="inner">
                     <!-- Carousel -->
-                    <div id="myCarousel" class="carousel slide" data-ride="carousel">  <!-- added data-ride for carousel auto-slide -->
+                    <div id="myCarousel" class="carousel slide" data-ride="carousel">  <!-- Ensure carousel slides automatically -->
                         <!-- Indicators -->
                         <ol class="carousel-indicators">
                             <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -94,9 +94,8 @@
     <!-- Initialize Carousel -->
     <script>
         $(document).ready(function() {
-            // Initialize carousel
             $('#myCarousel').carousel({
-                interval: 3000  // Carousel auto slide every 3 seconds
+                interval: 3000 // Carousel auto slide every 3 seconds
             });
         });
     </script>
