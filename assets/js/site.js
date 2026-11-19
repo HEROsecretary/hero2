@@ -246,6 +246,23 @@
     sections.forEach(function (s) { observer.observe(s.el); });
   }
 
+  function initPromoBanners() {
+    var HIDE_MS = 30 * 24 * 60 * 60 * 1000;
+    document.querySelectorAll('[data-promo-banner]').forEach(function (banner) {
+      var key = 'hero-banner-' + banner.getAttribute('data-promo-banner');
+      try {
+        var dismissedAt = parseInt(localStorage.getItem(key), 10);
+        if (dismissedAt && Date.now() - dismissedAt < HIDE_MS) { banner.hidden = true; return; }
+      } catch (e) {}
+      var close = banner.querySelector('.promo-close');
+      if (!close) return;
+      close.addEventListener('click', function () {
+        banner.hidden = true;
+        try { localStorage.setItem(key, String(Date.now())); } catch (e) {}
+      });
+    });
+  }
+
   document.addEventListener('DOMContentLoaded', function () {
     initNav();
     initCarousels();
@@ -255,5 +272,6 @@
     initBackToTop();
     initCountdown();
     initScrollspy();
+    initPromoBanners();
   });
 })();

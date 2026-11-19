@@ -18,6 +18,9 @@
   --red-500: #d9313f;
   --red-100: #fbe7e8;
 
+  --gold-500: #f5b83d;
+  --gold-400: #f8c963;
+
   --ink: #101828;
   --ink-soft: #3a4658;
   --muted: #667085;
@@ -327,6 +330,51 @@ html.is-scrolled .brand { font-size: .92rem; }
 
 .btn-outline-light { background: transparent; color: #fff; border-color: rgba(255, 255, 255, .35); }
 .btn-outline-light:hover { border-color: #fff; color: #fff; }
+
+.btn-donate {
+  background: var(--gold-500);
+  color: var(--navy-950);
+  font-weight: 700;
+  box-shadow: 0 10px 26px -8px rgba(245, 184, 61, .65), 0 0 0 4px rgba(245, 184, 61, .18);
+}
+.btn-donate:hover { background: var(--gold-400); color: var(--navy-950); box-shadow: 0 14px 30px -8px rgba(245, 184, 61, .8), 0 0 0 5px rgba(245, 184, 61, .25); }
+
+/* ---------- Dismissible promo banner ---------- */
+.promo-banner { background: var(--navy-950); color: #fff; border-bottom: 3px solid var(--gold-500); }
+.promo-banner[hidden] { display: none; }
+.promo-banner .promo-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .75rem 1.5rem;
+  flex-wrap: wrap;
+  padding-block: .85rem;
+  padding-right: 2.5rem;
+  position: relative;
+}
+.promo-banner p { margin: 0; font-size: .98rem; color: rgba(255, 255, 255, .92); }
+.promo-banner p strong { color: var(--gold-400); }
+.promo-banner .btn { padding: .55em 1.2em; font-size: .88rem; }
+.promo-close {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  border: 0;
+  background: transparent;
+  color: rgba(255, 255, 255, .8);
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+}
+.promo-close:hover { background: rgba(255, 255, 255, .12); color: #fff; }
+.promo-close:focus-visible { outline: 2px solid var(--gold-400); outline-offset: 2px; }
+@media (max-width: 640px) {
+  .promo-banner .promo-inner { justify-content: flex-start; padding-right: 2.75rem; }
+}
 
 .btn-sm { padding: .6em 1.2em; font-size: .85rem; }
 
