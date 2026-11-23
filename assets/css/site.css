@@ -870,4 +870,4 @@ table.table-clean tr:nth-child(even) { background: var(--navy-50); }
 }
 
 /* Header logo: white Star of Life image inside the red square */
-.brand .mark img { width: 78%; height: 78%; object-fit: contain; display: block; }
+.brand .mark img { width: 70%; height: 70%; object-fit: contain; display: block; }
