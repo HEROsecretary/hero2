@@ -868,3 +868,6 @@ table.table-clean tr:nth-child(even) { background: var(--navy-50); }
   /* Stacked home/page banner buttons: same width so they line up */
   .hero .btn-group .btn { width: 100%; }
 }
+
+/* Header logo: white Star of Life image inside the red square */
+.brand .mark img { width: 78%; height: 78%; object-fit: contain; display: block; }
