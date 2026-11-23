@@ -841,3 +841,30 @@ table.table-clean tr:nth-child(even) { background: var(--navy-50); }
   .bio-card .bio-body { padding: 1.4rem; }
   .card-grid.cols-4 { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
 }
+
+/* ---------- Phone-only readability fixes (no effect above 640px) ---------- */
+@media (max-width: 640px) {
+  /* Menu links: larger text and tap area */
+  .site-nav a { font-size: 1rem; padding-block: 1rem; }
+
+  /* Small labels were 12-13px; bring them up to ~14px */
+  .eyebrow,
+  .bio-card .bio-role,
+  .team-card h3,
+  .class-group h4 { font-size: .875rem; }
+  .bio-card .bio-email { font-size: .9rem; }
+  .person-card .person-sub { font-size: .9rem; }
+  .countdown .unit .lbl { font-size: .8rem; }
+  .tab-nav a { font-size: .95rem; }
+  .site-footer .copyright { font-size: .875rem; }
+  .carousel-caption { font-size: .8rem; }
+
+  /* Bio text at normal body size */
+  .bio-card p { font-size: 1rem; }
+
+  /* Landscape photo box was cutting off the tops of heads; anchor the crop near the top */
+  .bio-card .bio-photo img { object-position: center 15%; }
+
+  /* Stacked home/page banner buttons: same width so they line up */
+  .hero .btn-group .btn { width: 100%; }
+}
